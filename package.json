@@ -10,7 +10,9 @@
     "postinstall": "lerna bootstrap",
     "analyze": "lerna run analyze",
     "clean": "lerna run clean",
-    "format": "prettier --write \"./**/*.{js,json}\""
+    "format": "prettier --write \"./**/*.{js,json}\"",
+    "rebase": "sh ./scripts/rebase.sh",
+    "bump": "sh ./scripts/bump.sh"
   },
   "devDependencies": {
     "lerna": "^4.0.0",
