@@ -1,7 +1,10 @@
 {
-  "packages": ["web", "studio"],
+  "packages": [
+    "web",
+    "studio"
+  ],
   "npmClient": "yarn",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "command": {
     "version": {
       "message": "chore(release): publish %s"
