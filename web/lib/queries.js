@@ -33,3 +33,10 @@ export const blogItemQuery = `
 export const blogSlugsQuery = `
   *[_type == "blog"] { slug }
 `
+
+export const linksQuery = `
+  *[_type == "links"] | [0] {
+    _id,
+    links
+  }
+`
