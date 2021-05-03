@@ -2,10 +2,10 @@ const fs = require('fs')
 const Jimp = require('jimp')
 const prettier = require('prettier')
 
-const meta = require('../../content/meta')
+const meta = require('../content/meta')
 
 ;(async () => {
-  const assetsDir = './src/assets'
+  const assetsDir = './assets'
   const publicDir = './public'
   const iconsDir = './public/icons'
 

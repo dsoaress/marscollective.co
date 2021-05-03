@@ -1,8 +1,7 @@
 {
   "root": true,
   "project": {
-    "name": "Mars Collective",
-    "basePath": "/studio"
+    "name": "Mars Collective"
   },
   "api": {
     "projectId": "6yg5q08f",

@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "sanity start",
-    "build": "sanity build",
+    "build": "sanity build public -y",
     "test": "sanity check",
     "clean": "rm -rf dist node_modules"
   },

@@ -4,9 +4,9 @@
     "paths": {
       "@/assets/*": ["assets/*"],
       "@/components/*": ["components/*"],
-      "@/content/*": ["../content/*"],
+      "@/content/*": ["content/*"],
       "@/lib/*": ["lib/*"],
-      "@/locales": ["../content/locales"],
+      "@/locales": ["content/locales"],
       "@/theme/*": ["theme/*"]
     }
   },

@@ -11,9 +11,6 @@ coverage
 out
 public
 
-# sanity
-dist
-
 # misc
 .vscode
 .DS_Store
