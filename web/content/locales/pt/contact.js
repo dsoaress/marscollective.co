@@ -7,6 +7,7 @@ export default {
     email: 'Seu email',
     message: 'Sua mensagem',
     button: 'Enviar',
-    successMessage: 'Mensagem enviada com sucesso.'
+    successMessage: 'Mensagem enviada com sucesso.',
+    errorMessage: 'Tivemos um erro interno, por favor, tente novamente.'
   }
 }

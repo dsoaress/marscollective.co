@@ -7,6 +7,7 @@ export default {
     email: 'Your email',
     message: 'Your message',
     button: 'Send',
-    successMessage: 'Message sent successfully.'
+    successMessage: 'Message sent successfully.',
+    errorMessage: 'We had an internal error, please try again.'
   }
 }

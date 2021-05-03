@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useRouter } from 'next/router'
 import { BiEnvelope, BiPhone } from 'react-icons/bi'
 
@@ -11,6 +12,38 @@ import social from '@/content/social'
 export default function Contact() {
   const { locale } = useRouter()
   const t = locales[locale].contact
+  const [statusMessage, setStatusMessage] = useState('')
+
+  async function handleSubmit(e) {
+    e.preventDefault()
+    setStatusMessage('')
+
+    const name = e.currentTarget.name.value
+    const email = e.currentTarget.email.value
+    const message = e.currentTarget.message.value
+
+    const body = {
+      name,
+      email,
+      message
+    }
+
+    const res = await fetch('/api/mailer', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(body)
+    })
+
+    if (res.status === 200) {
+      setStatusMessage(t.form.successMessage)
+      e.target.reset()
+    } else {
+      setStatusMessage(t.form.errorMessage)
+    }
+  }
 
   return (
     <section className="container" id={t.id}>
@@ -31,19 +64,24 @@ export default function Contact() {
             <Social data={social} />
           </div>
         </div>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="bg-secondary rounded-3xl p-6 space-y-4 lg:p-8">
             <h3 className="text-white">{t.form.title}</h3>
             <Input type="text" label={t.form.name} name="name" required />
             <Input type="email" label={t.form.email} name="email" required />
             <TextArea label={t.form.message} name="message" required />
-            <div className="flex items-center space-x-4 text-white">
+            <div className="flex items-center text-white leading-5">
               <Button
                 type="submit"
-                style={{ borderColor: 'white', color: 'white' }}
+                style={{
+                  borderColor: 'white',
+                  color: 'white',
+                  marginRight: '1rem'
+                }}
               >
                 {t.form.button}
               </Button>
+              {statusMessage && statusMessage}
             </div>
           </div>
         </form>

@@ -2,6 +2,7 @@ module.exports = {
   title: 'Mars Collective',
   shortTitle: 'Mars',
   siteUrl: 'https://marscollective.co',
+  sandbox: 'mail.marscollective.co',
   descriptions: {
     en:
       'A collective of creative minds located in Brazil with an international mindset.',
