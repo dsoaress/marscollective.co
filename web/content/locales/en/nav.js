@@ -5,22 +5,22 @@ export default [
   },
   {
     label: 'What we do',
-    url: '#what-we-do'
+    url: '/#what-we-do'
   },
   {
     label: 'Our work',
-    url: '#our-work'
+    url: '/#our-work'
   },
   {
     label: 'Who we are',
-    url: '#who-we-are'
+    url: '/#who-we-are'
   },
   {
     label: 'Blog',
-    url: '#blog'
+    url: '/#blog'
   },
   {
     label: 'Contact',
-    url: '#contact'
+    url: '/#contact'
   }
 ]

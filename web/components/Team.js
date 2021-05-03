@@ -8,7 +8,7 @@ export default function Team({ data }) {
   const t = locales[locale].team
 
   return (
-    <section className="container">
+    <section className="container" id={t.id}>
       <h2 className="text-center text-primary">{t.title}</h2>
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10">
         {data.map(({ _id, image, name, position }) => (

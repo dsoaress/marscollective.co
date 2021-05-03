@@ -11,7 +11,7 @@ export default function BlogList({ data }) {
   const t = locales[locale].blog
 
   return (
-    <section className="container">
+    <section className="container" id={t.id}>
       <h2 className="text-center text-primary">{t.title}</h2>
       <div className="grid gap-8 md:grid-cols-2 md:gap-10">
         {data.map(({ _id, coverImage, date, slug, title }) => {

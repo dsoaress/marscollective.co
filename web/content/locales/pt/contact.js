@@ -1,4 +1,5 @@
 export default {
+  id: 'contato',
   title: 'Vamos criar coisas incríveis juntos',
   form: {
     title: 'Entre em contato',

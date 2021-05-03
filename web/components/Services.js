@@ -9,7 +9,7 @@ import locales from '@/locales'
 export default function Services() {
   const { locale } = useRouter()
   const t = locales[locale]
-  const { title, design, develop, write, localize } = t.services
+  const { design, develop, localize, id, title, write } = t.services
 
   const services = [
     {
@@ -35,7 +35,7 @@ export default function Services() {
   ]
 
   return (
-    <section className="container">
+    <section className="container" id={id}>
       <h2 className="text-center text-primary">{title}</h2>
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10">
         {services.map(({ icon, title, content }, i) => (

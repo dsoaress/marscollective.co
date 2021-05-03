@@ -1,4 +1,5 @@
 export default {
+  id: 'what-we-do',
   title: 'What we do',
   design: {
     title: 'We design',

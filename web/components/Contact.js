@@ -11,10 +11,9 @@ import social from '@/content/social'
 export default function Contact() {
   const { locale } = useRouter()
   const t = locales[locale].contact
-  // const { url } = t.nav.contact
 
   return (
-    <section className="container" id="contato">
+    <section className="container" id={t.id}>
       <div className="grid gap-8 lg:grid-cols-2 lg:items-center lg:bg-gray lg:rounded-3xl lg:p-16">
         <div>
           <h2>{t.title}</h2>

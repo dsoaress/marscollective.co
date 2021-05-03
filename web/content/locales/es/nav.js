@@ -1,26 +1,26 @@
 export default [
   {
-    label: 'Início',
+    label: 'Inicio',
     url: '/'
   },
   {
-    label: 'O que fazemos',
-    url: '#que-fazemos'
+    label: 'Qué hacemos',
+    url: '/#que-hacemos'
   },
   {
-    label: 'Nosso trabalho',
-    url: '#nosso-trabalho'
+    label: 'Nuestro trabajo',
+    url: '/#nuestro-trabajo'
   },
   {
-    label: 'Quem somos',
-    url: '#quem-somos'
+    label: 'Quienes somos',
+    url: '/#quienes-somos'
   },
   {
     label: 'Blog',
-    url: '#blog'
+    url: '/#blog'
   },
   {
-    label: 'Contato',
-    url: '#contato'
+    label: 'Contacto',
+    url: '/#contacto'
   }
 ]

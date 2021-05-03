@@ -26,8 +26,14 @@
 }
 
 @layer base {
-  body {
+  html {
     @apply bg-reverse font-body text-body transition-colors;
+    scroll-behavior: smooth;
+  }
+
+  :target:before {
+    content: '';
+    @apply block h-24 -mt-24;
   }
 
   h1,

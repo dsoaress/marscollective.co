@@ -1,4 +1,5 @@
 import BlogList from '@/components/BlogList'
+import Contact from '@/components/Contact'
 import Hero from '@/components/Hero'
 import Layout from '@/components/Layout'
 import Services from '@/components/Services'
@@ -13,6 +14,7 @@ export default function IndexPage({ blogList, team }) {
       <Services />
       <Team data={team} />
       <BlogList data={blogList} />
+      <Contact />
     </Layout>
   )
 }
