@@ -8,7 +8,7 @@ const nextConfig = {
     locales: ['en', 'es', 'pt'],
     defaultLocale: 'en'
   },
-  images: { domains: [''] },
+  images: { domains: ['localhost', 'www2.marscollective.co'] },
   future: { webpack5: false },
   webpack: (config, { isServer }) => {
     if (isServer) {

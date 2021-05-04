@@ -7,7 +7,7 @@
       "@/content/*": ["content/*"],
       "@/lib/*": ["lib/*"],
       "@/locales": ["content/locales"],
-      "@/theme/*": ["theme/*"]
+      "@/styles/*": ["styles/*"]
     }
   },
   "exclude": ["node_modules", ".next"]

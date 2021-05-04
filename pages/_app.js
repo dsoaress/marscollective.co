@@ -1,6 +1,6 @@
 import GoogleTagManager from '@/components/GoogleTagManager'
-import { ThemeProvider } from '@/theme/themeContext'
-import '@/theme/globals.css'
+import { ThemeProvider } from '@/styles/themeContext'
+import '@/styles/globals.css'
 
 export default function App({ Component, pageProps }) {
   return (

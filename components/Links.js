@@ -4,8 +4,8 @@ export default function Links({ data }) {
   return (
     <section className="container max-w-screen-md">
       <div className="grid gap-6">
-        {data.map(({ _key, label, url }) => (
-          <a href={url} target="_blank" rel="noopener noreferrer" key={_key}>
+        {data.translations[0].links.map(({ label, url }, i) => (
+          <a href={url} target="_blank" rel="noopener noreferrer" key={i}>
             <Button primary full>
               {label}
             </Button>

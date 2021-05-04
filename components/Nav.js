@@ -4,7 +4,8 @@ import Link from 'next/link'
 import locales from '@/locales'
 
 export default function Nav() {
-  const { locale, locales: nextLocales, pathname } = useRouter()
+  const { locale, locales: nextLocales, pathname, query } = useRouter()
+  const { slug } = query
   const t = locales[locale]
 
   return (
@@ -26,10 +27,7 @@ export default function Nav() {
         <ul className="flex space-x-4 md:justify-center md:space-x-6 lg:space-x-4">
           {nextLocales.map((localeItem, i) => (
             <li key={i}>
-              <Link
-                href={pathname === '/blog/[slug]' ? '/' : pathname}
-                locale={localeItem}
-              >
+              <Link href={slug || pathname} locale={localeItem}>
                 <a
                   className={`${
                     locale === localeItem ? 'text-primary' : 'text-body'

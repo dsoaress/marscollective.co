@@ -1,4 +1,5 @@
 export default {
   id: 'blog',
-  title: 'Blog'
+  title: 'Blog',
+  minRead: 'min read'
 }

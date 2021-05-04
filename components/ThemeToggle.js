@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { BiMoon, BiSun } from 'react-icons/bi'
 
-import { ThemeContext } from '@/theme/themeContext'
+import { ThemeContext } from '@/styles/themeContext'
 
 export default function ThemeToggle() {
   const { theme, setTheme } = useContext(ThemeContext)
