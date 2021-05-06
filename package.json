@@ -11,7 +11,7 @@
     "clean": "rm -rf .next public node_modules",
     "analyze": "ANALYZE=true next build",
     "preversion": "yarn build",
-    "postversion": "git push --tags && yarn push upstream --tags && git push && git push upstream && echo \"Successfully released version $npm_package_version!\""
+    "postversion": "git push --tags && git push upstream --tags && git push && git push upstream && echo \"Successfully released version $npm_package_version!\""
   },
   "dependencies": {
     "axios": "^0.21.1",
