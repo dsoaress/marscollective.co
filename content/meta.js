@@ -1,7 +1,7 @@
 module.exports = {
   title: 'Mars Collective',
   shortTitle: 'Mars',
-  siteUrl: 'https://marscollective.co',
+  siteUrl: 'marscollective.co',
   sandbox: 'mail.marscollective.co',
   descriptions: {
     en:
@@ -13,7 +13,8 @@ module.exports = {
   },
   phone: '+55 45 98408-2627',
   email: 'hi@marscollective.co',
-  gtm: 'GTM-TG7DCN7',
+  fathomId: 'IOALPSWL',
+  fathomUrl: 'https://thrush.marscollective.co/script.js',
   icon: 'icon.png',
   backgroundColor: '#262626',
   themeColor: '#00d1b7'
