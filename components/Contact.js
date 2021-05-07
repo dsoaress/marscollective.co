@@ -7,8 +7,7 @@ import Button from '@/components/Button'
 import { Input, TextArea } from '@/components/Inputs'
 import Social from '@/components/Social'
 import locales from '@/locales'
-import meta from '@/content/meta'
-import social from '@/content/social'
+import settings from '@/settings'
 
 export default function Contact() {
   const { locale } = useRouter()
@@ -55,15 +54,15 @@ export default function Contact() {
             <div className="space-y-6 lg:space-y-4">
               <div className="flex space-x-6 lg:space-x-4">
                 <BiEnvelope className="w-6 h-6 lg:w-4 lg:h-4 lg:mt-1" />
-                <a href={`mailto:${meta.email}`} className="text-body">
-                  {meta.email}
+                <a href={`mailto:${settings.email}`} className="text-body">
+                  {settings.email}
                 </a>
               </div>
               <div className="flex space-x-6 lg:space-x-4">
                 <BiPhone className="w-6 h-6 lg:w-4 lg:h-4 lg:mt-1" />
-                <span className="text-default">{meta.phone}</span>
+                <span className="text-default">{settings.phone}</span>
               </div>
-              <Social data={social} />
+              <Social data={settings.social} />
             </div>
           </div>
           <form onSubmit={handleSubmit}>

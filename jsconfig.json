@@ -4,11 +4,10 @@
     "paths": {
       "@/assets/*": ["assets/*"],
       "@/components/*": ["components/*"],
-      "@/content/*": ["content/*"],
       "@/lib/*": ["lib/*"],
-      "@/locales": ["content/locales"],
+      "@/locales": ["locales"],
+      "@/settings": ["settings"],
       "@/styles/*": ["styles/*"]
     }
-  },
-  "exclude": ["node_modules", ".next"]
+  }
 }

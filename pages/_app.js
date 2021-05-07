@@ -2,8 +2,10 @@ import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import * as Fathom from 'fathom-client'
 
-import { fathomId, fathomUrl, siteUrl } from '@/content/meta'
 import { ThemeProvider } from '@/styles/themeContext'
+import settings from '@/settings'
+import 'typeface-baloo-2'
+import 'typeface-rubik'
 import '@/styles/globals.css'
 
 export default function App({ Component, pageProps }) {
@@ -12,9 +14,9 @@ export default function App({ Component, pageProps }) {
   useEffect(() => {
     window.dataLayer = window.dataLayer || []
 
-    Fathom.load(fathomId, {
-      url: fathomUrl,
-      includedDomains: [siteUrl]
+    Fathom.load(settings.fathom_id, {
+      url: `https://${settings.fathom_url}/script.js`,
+      includedDomains: [settings.site_url]
     })
 
     function onRouteChangeComplete() {

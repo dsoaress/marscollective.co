@@ -5,11 +5,11 @@ import { FiMenu } from 'react-icons/fi'
 import Logo from '@/assets/Logo'
 import Nav from '@/components/Nav'
 import ThemeToggle from '@/components/ThemeToggle'
-import meta from '@/content/meta'
+import settings from '@/settings'
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
-  const { title } = meta
+  const { title } = settings
 
   return (
     <header className="container flex justify-between items-center">

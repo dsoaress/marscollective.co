@@ -4543,6 +4543,16 @@ type-fest@^0.7.1:
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.7.1.tgz#8dda65feaf03ed78f0a3f9678f1869147f7c5c48"
   integrity sha512-Ne2YiiGN8bmrmJJEuTWTLJR32nh/JdL1+PSicowtNb0WFpn59GK8/lfD61bVtzguz7b3PBt74nxpv/Pw5po5Rg==
 
+typeface-baloo-2@^1.1.13:
+  version "1.1.13"
+  resolved "https://registry.yarnpkg.com/typeface-baloo-2/-/typeface-baloo-2-1.1.13.tgz#877a4e21614e641592b129b9564e47ddd05c25d8"
+  integrity sha512-NTqW+P/z44n+h24Em/mAf0Fpx+RHnmMjWUT/12pkh9+KMARJJ2EXQm3sgjdDoQ3Uf8zHmBzQaoPpfl1oR1iEhA==
+
+typeface-rubik@^1.1.13:
+  version "1.1.13"
+  resolved "https://registry.yarnpkg.com/typeface-rubik/-/typeface-rubik-1.1.13.tgz#c01d40f05718590bc05d08ea404666a8ef56377a"
+  integrity sha512-mMWgn3bYfT6V4WWA3yvdEM3AkTA7iK1XwhlOX3+vWfqHc6O9I2RUsi9krEXzNdQ1UE/eoEFBRigMtu30PsdEDg==
+
 unbox-primitive@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/unbox-primitive/-/unbox-primitive-1.0.1.tgz#085e215625ec3162574dc8859abee78a59b14471"

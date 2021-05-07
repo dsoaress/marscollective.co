@@ -2,7 +2,7 @@ import formData from 'form-data'
 import Mailgun from 'mailgun.js'
 import AbortController from 'node-abort-controller'
 
-import meta from '@/content/meta'
+import settings from '@/settings'
 
 global.AbortController = AbortController
 
@@ -22,9 +22,9 @@ export default async function handler(req, res) {
     }
 
     try {
-      const msg = await mg.messages.create(meta.sandbox, {
+      const msg = await mg.messages.create(settings.sandbox, {
         from: `${name} <${email}>`,
-        to: [meta.email],
+        to: [settings.email],
         subject: 'Contato via MarsCollective.co',
         text: message
       })

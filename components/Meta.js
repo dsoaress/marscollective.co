@@ -1,23 +1,33 @@
+import { Fragment } from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 
-import meta from '@/content/meta'
+import settings from '@/settings'
 
 export default function Meta() {
   const { locale } = useRouter()
-  const description = meta.descriptions[locale]
 
   return (
     <Head>
-      <title>{meta.title}</title>
-      <meta name="description" content={description} />
-      <meta property="og:title" content={meta.title} />
-      <meta property="og:description" content={description} />
+      <title>{settings.title}</title>
+      <meta property="og:title" content={settings.title} />
       <meta property="og:type" content="website" />
       <meta name="twitter:card" content="summary" />
-      <meta name="twitter:title" content={meta.title} />
-      <meta name="twitter:description" content={description} />
-      <meta name="theme-color" content={meta.themeColor} />
+      <meta name="twitter:title" content={settings.title} />
+      <meta name="theme-color" content={settings.theme_color} />
+
+      {settings.descriptions.map(({ languages_code, description }) => {
+        if (languages_code === locale) {
+          return (
+            <Fragment key={locale}>
+              <meta name="description" content={description} />
+              <meta property="og:description" content={description} />
+              <meta name="twitter:description" content={description} />
+            </Fragment>
+          )
+        }
+      })}
+
       <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
       <link rel="manifest" href="/manifest.json" />
       <link rel="icon" href="/icons/icon-32x32.png" type="image/png" />

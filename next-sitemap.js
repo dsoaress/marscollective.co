@@ -1,6 +1,6 @@
-const { siteUrl } = require('./content/meta')
+const settings = require('./settings')
 
 module.exports = {
-  siteUrl,
+  siteUrl: `https://${settings.site_url}`,
   generateRobotsTxt: true
 }

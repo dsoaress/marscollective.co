@@ -1,15 +1,35 @@
+const axios = require('axios')
 const fs = require('fs')
 const Jimp = require('jimp')
 const prettier = require('prettier')
 
-const meta = require('../content/meta')
-
 ;(async () => {
-  const assetsDir = './assets'
+  const api = process.env.NEXT_PUBLIC_API_URL
+  const settingsDir = './settings'
   const publicDir = './public'
   const iconsDir = './public/icons'
 
-  const { title, shortTitle, icon, backgroundColor, themeColor } = meta
+  if (!fs.existsSync(settingsDir)) {
+    fs.mkdirSync(settingsDir)
+  }
+
+  const {
+    data: { data: settings }
+  } = await axios.get(`${api}/items/settings?fields=*,descriptions.*`)
+
+  const formatted = prettier.format(JSON.stringify(settings), {
+    parser: 'json'
+  })
+
+  fs.writeFileSync(`${settingsDir}/index.json`, formatted)
+
+  const {
+    title,
+    short_title,
+    favicon,
+    background_color,
+    theme_color
+  } = settings
 
   if (!fs.existsSync(iconsDir)) {
     fs.mkdirSync(iconsDir, {
@@ -17,9 +37,9 @@ const meta = require('../content/meta')
     })
   }
 
-  const iconPath = `${assetsDir}/${icon}`
+  const iconUrl = `${api}/assets/${favicon}`
 
-  Jimp.read(iconPath, function (err, lenna) {
+  Jimp.read(iconUrl, function (err, lenna) {
     if (err) throw err
     lenna.resize(512, 512).write(`${iconsDir}/icon-512x512.png`)
     lenna.resize(384, 384).write(`${iconsDir}/icon-384x384.png`)
@@ -35,10 +55,10 @@ const meta = require('../content/meta')
   const manifest = `
       {
         "name": "${title}",
-        "short_name": "${shortTitle}",
+        "short_name": "${short_title}",
         "start_url": "/",
-        "background_color": "${backgroundColor}",
-        "theme_color": "${themeColor}",
+        "background_color": "${background_color}",
+        "theme_color": "${theme_color}",
         "display": "fullscreen",
         "icons": [
           {

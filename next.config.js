@@ -12,7 +12,7 @@ const nextConfig = {
   future: { webpack5: false },
   webpack: (config, { isServer }) => {
     if (isServer) {
-      require('./scripts/pwa')
+      require('./scripts/prebuild')
     }
     return config
   },
