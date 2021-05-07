@@ -6,7 +6,7 @@ import settings from '@/settings'
 
 export default function SEO() {
   const { locale } = useRouter()
-  const { descriptions, og_image, site_url, theme_color, title } = settings
+  const { descriptions, og_image, theme_color, title } = settings
 
   const description = {
     en: descriptions[0].description,
@@ -19,7 +19,6 @@ export default function SEO() {
       titleTemplate={`%s | ${title}`}
       defaultTitle={title}
       description={description[locale]}
-      canonical={`https://${site_url}`}
       openGraph={{
         locale,
         type: 'website',
@@ -90,7 +89,9 @@ export default function SEO() {
           rel: 'apple-touch-icon',
           sizes: '512x512',
           href: '/icons/icon-512x512.png'
-        },
+        }
+      ]}
+      additionalMetaTags={[
         {
           name: 'theme-color',
           content: theme_color
