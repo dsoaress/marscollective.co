@@ -1,6 +1,5 @@
 const settings = require('./settings')
 
 module.exports = {
-  siteUrl: `https://${settings.site_url}`,
-  generateRobotsTxt: true
+  siteUrl: `https://${settings.site_url}`
 }

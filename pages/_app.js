@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import * as Fathom from 'fathom-client'
 
+import SEO from '@/components/SEO'
 import { ThemeProvider } from '@/styles/themeContext'
 import settings from '@/settings'
 import 'typeface-baloo-2'
@@ -32,6 +33,7 @@ export default function App({ Component, pageProps }) {
 
   return (
     <ThemeProvider>
+      <SEO />
       <Component {...pageProps} />
     </ThemeProvider>
   )
