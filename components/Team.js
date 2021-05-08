@@ -13,11 +13,13 @@ export default function Team({ data }) {
       <section className="container" id={t.id}>
         <h2 className="text-center text-primary">{t.title}</h2>
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10">
-          {data.map(({ id, image, name, translations }) => (
+          {data.map(({ id, avatar, first_name, last_name, translations }) => (
             <div className="flex flex-col space-y-4 items-center" key={id}>
-              <Avatar image={image} name={name} />
+              <Avatar image={avatar} name={first_name + ' ' + last_name} />
               <div>
-                <h3 className="text-center text-primary">{name}</h3>
+                <h3 className="text-center text-primary">
+                  {first_name + ' ' + last_name}
+                </h3>
                 <p className="text-xl lg:text-2xl text-center">
                   {translations[0].position}
                 </p>
