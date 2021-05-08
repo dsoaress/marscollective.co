@@ -1,10 +1,13 @@
-import { useContext } from 'react'
+import { useEffect, useState } from 'react'
+import { useTheme } from 'next-themes'
 import { BiMoon, BiSun } from 'react-icons/bi'
 
-import { ThemeContext } from '@/styles/themeContext'
-
 export default function ThemeToggle() {
-  const { theme, setTheme } = useContext(ThemeContext)
+  const [mounted, setMounted] = useState(false)
+  const { theme, setTheme } = useTheme()
+
+  useEffect(() => setMounted(true), [])
+  if (!mounted) return null
 
   function isDark() {
     return theme === 'dark'

@@ -5,9 +5,7 @@
 :root {
   --font-body: 'Baloo 2', sans-serif;
   --font-heading: Rubik, sans-serif;
-}
 
-.light {
   --color-body: #262626;
   --color-gray: #f1f1f1;
   --color-primary: #25796f;
@@ -16,7 +14,7 @@
   --color-reverse: #ffffff;
 }
 
-.dark {
+[data-theme='dark'] {
   --color-body: #ffffff;
   --color-gray: #353535;
   --color-primary: #00d1b7;
