@@ -22,7 +22,7 @@ export default async function handler(req, res) {
     }
 
     try {
-      const msg = await mg.messages.create(settings.sandbox, {
+      const msg = await mg.messages.create(settings.email_sandbox, {
         from: `${name} <${email}>`,
         to: [settings.email],
         subject: 'Contato via MarsCollective.co',
