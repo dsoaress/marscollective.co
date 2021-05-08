@@ -11,7 +11,6 @@
     "clean": "rm -rf .next public node_modules",
     "analyze": "ANALYZE=true next build",
     "format": "prettier --write \"./**/*.{js,jsx,ts,tsx,json,md,mdx,yml}\"",
-    "preversion": "yarn build",
     "postversion": "git push --tags && git push upstream --tags && git push && git push upstream"
   },
   "dependencies": {

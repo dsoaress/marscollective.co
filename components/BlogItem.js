@@ -15,6 +15,7 @@ const PostItem = ({ data }) => {
   const t = locales[locale].blog
   const { author, date, date_updated, image, slug, tags, translations } = data
   const title = translations[0].title
+  const authorName = author.first_name + ' ' + author.last_name
   const description = translations[0].description
   const body = translations[0].body
   const minRead = Math.round(readingTime(body).minutes)
@@ -57,9 +58,9 @@ const PostItem = ({ data }) => {
         <div className="space-y-8 lg:py-20">
           <h1>{title}</h1>
           <div className="flex items-center space-x-2">
-            <Avatar image={author.image} name={author.name} small />
+            <Avatar image={author.avatar} name={authorName} small />
             <div>
-              <p className="font-semibold">{author.name}</p>
+              <p className="font-semibold">{authorName}</p>
               <p className="text-sm">{formatDate(date)[locale]}</p>
               <p className="text-sm">{minRead + ' ' + t.minRead}</p>
             </div>
@@ -83,13 +84,13 @@ const PostItem = ({ data }) => {
                 key={languages_code}
               >
                 <Avatar
-                  image={author.image}
-                  alt={author.name}
+                  image={author.avatar}
+                  alt={authorName}
                   className="flex-1"
                 />
                 <div className="flex-1 space-y-4">
                   <p className="text-xl lg:text-2xl font-semibold">
-                    {author.name}
+                    {authorName}
                   </p>
                   <p className="text-sm">{bio}</p>
                   {author.social && <Social data={author.social} />}
