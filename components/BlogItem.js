@@ -11,7 +11,7 @@ import locales from '@/locales'
 import settings from '@/settings'
 
 const PostItem = ({ data }) => {
-  const { locale } = useRouter()
+  const { locale, locales: nextLocales } = useRouter()
   const t = locales[locale].blog
   const { author, date, date_updated, image, slug, tags, translations } = data
   const title = translations[0].title
@@ -19,6 +19,8 @@ const PostItem = ({ data }) => {
   const description = translations[0].description
   const body = translations[0].body
   const minRead = Math.round(readingTime(body).minutes)
+  const fullUrlPath = `https://${settings.site_url}/${locale}/blog/${slug}`
+  const fullUrlPathDefault = `https://${settings.site_url}/blog/${slug}`
 
   return (
     <article className="container">
@@ -26,7 +28,7 @@ const PostItem = ({ data }) => {
         title={title}
         description={description}
         openGraph={{
-          url: `https://${settings.site_url}/${locale}/blog/${slug}`,
+          url: fullUrlPath,
           type: 'article',
           article: {
             publishedTime: date,
@@ -42,9 +44,27 @@ const PostItem = ({ data }) => {
             }
           ]
         }}
+        languageAlternates={[
+          {
+            hrefLang: nextLocales[0],
+            href: `https://${settings.site_url}/${nextLocales[0]}/blog/${slug}`
+          },
+          {
+            hrefLang: nextLocales[1],
+            href: `https://${settings.site_url}/${nextLocales[1]}/blog/${slug}`
+          },
+          {
+            hrefLang: nextLocales[2],
+            href: `https://${settings.site_url}/${nextLocales[2]}/blog/${slug}`
+          },
+          {
+            hrefLang: 'x-default',
+            href: fullUrlPathDefault
+          }
+        ]}
       />
       <NewsArticleJsonLd
-        url={`https://${settings.site_url}/${locale}/blog/${slug}`}
+        url={fullUrlPath}
         title={title}
         images={[imageToUrl(`${image}`)]}
         keywords={tags}

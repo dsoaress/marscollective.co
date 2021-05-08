@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next-sitemap",
+    "build": "next build",
     "start": "next start",
     "clean": "rm -rf .next public node_modules",
     "analyze": "ANALYZE=true next build",
@@ -36,7 +36,6 @@
     "@next/bundle-analyzer": "^10.2.0",
     "autoprefixer": "^10.2.5",
     "jimp": "^0.16.1",
-    "next-sitemap": "^1.6.34",
     "postcss": "^8.2.13",
     "postcss-nested": "^5.0.5",
     "prettier": "^2.2.1",

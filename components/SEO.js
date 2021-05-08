@@ -5,7 +5,7 @@ import { imageToUrl } from '@/lib/imageToUrl'
 import settings from '@/settings'
 
 export default function SEO() {
-  const { locale } = useRouter()
+  const { locale, locales, pathname } = useRouter()
   const { descriptions, og_image, theme_color, title } = settings
 
   const description = {
@@ -35,15 +35,28 @@ export default function SEO() {
         site: '@site',
         cardType: 'summary_large_image'
       }}
+      languageAlternates={[
+        {
+          hrefLang: locales[0],
+          href: `https://${settings.site_url}/${locales[0]}${pathname}`
+        },
+        {
+          hrefLang: locales[1],
+          href: `https://${settings.site_url}/${locales[1]}${pathname}`
+        },
+        {
+          hrefLang: locales[2],
+          href: `https://${settings.site_url}/${locales[2]}${pathname}`
+        },
+        {
+          hrefLang: 'x-default',
+          href: `https://${settings.site_url}`
+        }
+      ]}
       additionalLinkTags={[
         {
           rel: 'manifest',
           href: '/manifest.json'
-        },
-        {
-          rel: 'sitemap',
-          type: 'application/xml',
-          href: '/sitemap.xml'
         },
         {
           rel: 'icon',
