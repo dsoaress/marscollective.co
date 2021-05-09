@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 import { BiEnvelope, BiPhone } from 'react-icons/bi'
+import cn from 'classnames'
 import Fade from 'react-reveal/Fade'
 
 import Button from '@/components/Button'
@@ -12,10 +13,12 @@ import settings from '@/settings'
 export default function Contact() {
   const { locale } = useRouter()
   const t = locales[locale].contact
+  const [loading, setLoading] = useState(false)
   const [statusMessage, setStatusMessage] = useState('')
 
   async function handleSubmit(e) {
     e.preventDefault()
+    setLoading(true)
     setStatusMessage('')
 
     const name = e.currentTarget.name.value
@@ -43,6 +46,8 @@ export default function Contact() {
     } else {
       setStatusMessage(t.form.errorMessage)
     }
+
+    setLoading(false)
   }
 
   return (
@@ -72,17 +77,16 @@ export default function Contact() {
               <Input type="email" label={t.form.email} name="email" required />
               <TextArea label={t.form.message} name="message" required />
               <div className="flex items-center text-white leading-5">
-                <Button
-                  type="submit"
-                  style={{
-                    borderColor: 'white',
-                    color: 'white',
-                    marginRight: '1rem'
-                  }}
-                >
+                <Button type="submit" loading={loading} className="mr-4">
                   {t.form.button}
                 </Button>
-                {statusMessage && statusMessage}
+                <span
+                  className={cn('transition-opacity duration-1000 opacity-0', {
+                    'opacity-100': statusMessage
+                  })}
+                >
+                  {statusMessage}
+                </span>
               </div>
             </div>
           </form>

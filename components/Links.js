@@ -6,7 +6,7 @@ export default function Links({ data }) {
       <div className="grid gap-6">
         {data.translations[0].links.map(({ label, url }, i) => (
           <a href={url} target="_blank" rel="noopener noreferrer" key={i}>
-            <Button primary full>
+            <Button variant="primary" width="full">
               {label}
             </Button>
           </a>

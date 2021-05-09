@@ -21,7 +21,7 @@ export default function Hero() {
           <div className="flex flex-wrap justify-center space-x-0">
             <Link href={t.buttonPrimary.url}>
               <a>
-                <Button primary>{t.buttonPrimary.label}</Button>
+                <Button variant="primary">{t.buttonPrimary.label}</Button>
               </a>
             </Link>
             {/* <Link href={t.buttonSecondary.url}>

@@ -18,7 +18,9 @@ module.exports = {
   },
   variants: {
     extend: {
-      margin: ['first', 'last']
+      margin: ['first', 'last'],
+      cursor: ['disabled'],
+      opacity: ['disabled']
     }
   }
 }
