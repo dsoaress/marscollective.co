@@ -1,7 +1,7 @@
 {
   "name": "marscollective.co",
   "author": "Mars Collective <hi@marscollective.co>",
-  "version": "0.3.7",
+  "version": "0.3.8",
   "private": true,
   "license": "MIT",
   "scripts": {
