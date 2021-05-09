@@ -7,10 +7,10 @@ export default [
     label: 'Qué hacemos',
     url: '/#que-hacemos'
   },
-  {
-    label: 'Nuestro trabajo',
-    url: '/#nuestro-trabajo'
-  },
+  // {
+  //   label: 'Nuestro trabajo',
+  //   url: '/#nuestro-trabajo'
+  // },
   {
     label: 'Quienes somos',
     url: '/#quienes-somos'

@@ -18,17 +18,17 @@ export default function Hero() {
             <span className="text-primary">{t.bigger}</span>
           </h1>
           <p className="text-xl lg:text-2xl font-normal">{t.lead}</p>
-          <div className="flex flex-wrap justify-center space-x-8">
+          <div className="flex flex-wrap justify-center space-x-0">
             <Link href={t.buttonPrimary.url}>
               <a>
                 <Button primary>{t.buttonPrimary.label}</Button>
               </a>
             </Link>
-            <Link href={t.buttonSecondary.url}>
+            {/* <Link href={t.buttonSecondary.url}>
               <a>
                 <Button>{t.buttonSecondary.label}</Button>
               </a>
-            </Link>
+            </Link> */}
           </div>
         </div>
         <div className="w-2/3 lg:w-full">
