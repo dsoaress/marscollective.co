@@ -29,43 +29,6 @@
     scroll-behavior: smooth;
   }
 
-  :target:before {
-    content: '';
-    @apply block h-24 -mt-24;
-  }
-
-  h1,
-  h2 {
-    @apply font-black font-heading uppercase;
-  }
-
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply font-body font-semibold leading-6;
-  }
-
-  h1 {
-    @apply text-4xl sm:text-5xl md:text-6xl;
-  }
-
-  h1 span {
-    @apply text-7xl sm:text-8xl md:text-9xl block;
-  }
-
-  h2 {
-    @apply mb-8 text-3xl sm:mb-12 md:mb-16 md:text-4xl lg:mb-20 lg:text-5xl;
-  }
-
-  h3 {
-    @apply text-2xl md:mb-2 lg:text-3xl;
-  }
-
-  h4 {
-    @apply text-lg;
-  }
-
   a {
     @apply text-primary transition duration-500;
   }
@@ -74,46 +37,5 @@
 @layer components {
   .container {
     @apply max-w-screen-xl px-6 md:px-8 mx-auto my-16 sm:my-20 md:my-24 lg:my-28 first:mt-16 last:mb-16;
-  }
-}
-
-.post {
-  @apply my-16;
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  ol,
-  li,
-  p,
-  blockquote {
-    @apply md:ml-20 md:mr-20 lg:ml-28 lg:mr-28;
-  }
-
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply mt-12 mb-6;
-  }
-
-  p {
-    @apply mb-4 last:mb-0;
-  }
-
-  blockquote {
-    @apply border-l-4 border-primary text-xl italic my-8 py-4 pl-4;
-  }
-
-  blockquote p {
-    @apply mx-0;
-  }
-
-  img {
-    @apply rounded-3xl my-8;
   }
 }

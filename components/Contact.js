@@ -6,6 +6,7 @@ import Fade from 'react-reveal/Fade'
 
 import Button from '@/components/Button'
 import { Input, TextArea } from '@/components/Inputs'
+import Heading from '@/components/Heading'
 import Social from '@/components/Social'
 import locales from '@/locales'
 import settings from '@/settings'
@@ -55,7 +56,7 @@ export default function Contact() {
       <section className="container" id={t.id}>
         <div className="grid gap-8 lg:grid-cols-2 lg:items-center lg:bg-gray lg:rounded-3xl lg:p-16">
           <div>
-            <h2>{t.title}</h2>
+            <Heading>{t.title}</Heading>
             <div className="space-y-6 lg:space-y-4">
               <div className="flex space-x-6 lg:space-x-4">
                 <BiEnvelope className="w-6 h-6 lg:w-4 lg:h-4 lg:mt-1" />
@@ -72,7 +73,9 @@ export default function Contact() {
           </div>
           <form onSubmit={handleSubmit}>
             <div className="bg-secondary rounded-3xl p-6 space-y-4 lg:p-8">
-              <h3 className="text-white">{t.form.title}</h3>
+              <Heading as="h3" className="text-white">
+                {t.form.title}
+              </Heading>
               <Input type="text" label={t.form.name} name="name" required />
               <Input type="email" label={t.form.email} name="email" required />
               <TextArea label={t.form.message} name="message" required />

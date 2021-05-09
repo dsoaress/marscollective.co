@@ -1,4 +1,5 @@
 module.exports = {
+  mode: 'jit',
   purge: ['./pages/**/*.js', './components/**/*.js'],
   theme: {
     extend: {
@@ -13,14 +14,45 @@ module.exports = {
       fontFamily: {
         body: 'var(--font-body)',
         heading: 'var(--font-heading)'
+      },
+      typography: {
+        DEFAULT: {
+          css: {
+            color: 'var(--color-body)',
+            a: {
+              color: 'var(--color-primary)',
+              '&:hover': {
+                color: 'var(--color-hover)'
+              }
+            },
+            h1: {
+              color: 'var(--color-body)'
+            },
+            h2: {
+              color: 'var(--color-body)'
+            },
+            h3: {
+              color: 'var(--color-body)'
+            },
+            h4: {
+              color: 'var(--color-body)'
+            },
+            h5: {
+              color: 'var(--color-body)'
+            },
+            h6: {
+              color: 'var(--color-body)'
+            },
+            img: {
+              'border-radius': '1.5rem'
+            }
+          }
+        }
       }
     }
   },
-  variants: {
-    extend: {
-      margin: ['first', 'last'],
-      cursor: ['disabled'],
-      opacity: ['disabled']
-    }
-  }
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/line-clamp')
+  ]
 }
