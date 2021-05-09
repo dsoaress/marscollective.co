@@ -2435,11 +2435,6 @@ fastq@^1.6.0:
   dependencies:
     reusify "^1.0.4"
 
-fathom-client@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/fathom-client/-/fathom-client-3.0.0.tgz#409c047cf1e2fea45b148e28d50fcd635e992893"
-  integrity sha512-d0oH2SHWCMIVLbbegB7nBIjSvbqbHrZBZxIOWSVAxlJL/roL0Ah9NNb6rTIcKMlA4gov9AjWQGEcZRzlnGc3XQ==
-
 fetch-blob@^2.1.1:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/fetch-blob/-/fetch-blob-2.1.2.tgz#a7805db1361bd44c1ef62bb57fb5fe8ea173ef3c"
@@ -3285,6 +3280,11 @@ native-url@0.3.4:
   integrity sha512-6iM8R99ze45ivyH8vybJ7X0yekIcPf5GgLV5K0ENCbmRcaRIDoj37BC8iLEmaaBfqqb8enuZ5p0uhY+lVAbAcA==
   dependencies:
     querystring "^0.2.0"
+
+next-plausible@^1.6.1:
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/next-plausible/-/next-plausible-1.6.1.tgz#0346a254c73fdac5bf3ac3f06f0028fede782c5a"
+  integrity sha512-eMVqZbzU6bJsBIHlC63lNKl0KLvx8NA+/YlUUqj2gvCviQ7C2X4PY59gEB+mO46JvKSy/IhAD8l85/YGFhCkDg==
 
 next-pwa@^5.2.18:
   version "5.2.21"
