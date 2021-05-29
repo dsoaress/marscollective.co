@@ -1,23 +1,27 @@
 import { ThemeProvider } from 'next-themes'
-import PlausibleProvider from 'next-plausible'
+import Head from 'next/head'
 
-import SEO from '@/components/SEO'
+import Seo from '@/components/Seo'
 import settings from '@/settings'
 import 'typeface-baloo-2'
 import 'typeface-rubik'
 import '@/styles/globals.css'
 
 export default function App({ Component, pageProps }) {
+  const { site_url, tracker_id, tracker_url } = settings
   return (
     <ThemeProvider defaultTheme="system">
-      <PlausibleProvider
-        domain={settings.site_url}
-        customDomain={`https://stats.${settings.site_url}`}
-        trackOutboundLinks={true}
-      >
-        <SEO />
-        <Component {...pageProps} />
-      </PlausibleProvider>
+      <Head>
+        <script
+          async
+          defer
+          data-website-id={tracker_id}
+          src={`https://${tracker_url}/umami.js`}
+          data-domains={site_url}
+        />
+      </Head>
+      <Seo />
+      <Component {...pageProps} />
     </ThemeProvider>
   )
 }

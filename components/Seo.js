@@ -4,21 +4,20 @@ import { useRouter } from 'next/router'
 import { imageToUrl } from '@/lib/imageToUrl'
 import settings from '@/settings'
 
-export default function SEO() {
-  const { locale, locales, pathname } = useRouter()
+export default function Seo() {
+  const { locale } = useRouter()
   const { descriptions, og_image, theme_color, title } = settings
 
-  const description = {
-    en: descriptions[0].description,
-    es: descriptions[1].description,
-    pt: descriptions[2].description
-  }
+  const localized = descriptions.filter(
+    localized => localized.languages_code === locale
+  )
+  const { description } = localized[0]
 
   return (
     <DefaultSeo
       titleTemplate={`%s | ${title}`}
       defaultTitle={title}
-      description={description[locale]}
+      description={description}
       openGraph={{
         locale,
         type: 'website',
@@ -35,24 +34,6 @@ export default function SEO() {
         site: '@site',
         cardType: 'summary_large_image'
       }}
-      languageAlternates={[
-        {
-          hrefLang: locales[0],
-          href: `https://${settings.site_url}/${locales[0]}${pathname}`
-        },
-        {
-          hrefLang: locales[1],
-          href: `https://${settings.site_url}/${locales[1]}${pathname}`
-        },
-        {
-          hrefLang: locales[2],
-          href: `https://${settings.site_url}/${locales[2]}${pathname}`
-        },
-        {
-          hrefLang: 'x-default',
-          href: `https://${settings.site_url}`
-        }
-      ]}
       additionalLinkTags={[
         {
           rel: 'manifest',

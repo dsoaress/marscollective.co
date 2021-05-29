@@ -41,7 +41,7 @@ export default function Social({ data }) {
               aria-label={label}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-body hover:text-primary transition duration-500"
+              className={`text-body hover:text-primary transition duration-500 umami--click--${label}`}
             >
               <Icon className="w-5 h-5 lg:w-4 lg:h-4" />
             </a>

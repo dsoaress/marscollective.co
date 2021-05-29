@@ -80,7 +80,12 @@ export default function Contact() {
               <Input type="email" label={t.form.email} name="email" required />
               <TextArea label={t.form.message} name="message" required />
               <div className="flex items-center text-white leading-5">
-                <Button type="submit" loading={loading} className="mr-4">
+                <Button
+                  type="submit"
+                  loading={loading}
+                  variant="white"
+                  className="mr-4"
+                >
                   {t.form.button}
                 </Button>
                 <span
